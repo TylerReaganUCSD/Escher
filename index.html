@@ -1,0 +1,95 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escher Integration Test Space</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation.min.js"></script>
+    <!-- <link rel="stylesheet" href="writ.min.css" /> -->
+
+    <!-- Make the parent page look nice for the demo -->
+    <!-- <link rel="stylesheet" href="css/app.css"> -->
+
+    <!-- D3 is the only Escher dependency -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+    <!-- Escher files -->
+    <script src="escher.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="builder.css"/>
+
+    <!-- The script for the demo -->
+    <script src="main.js"></script>
+
+  </head>
+  <body>
+    <div class="row">
+      <div class="columns">
+        <h2>Horizontal Tabs</h2>
+        <p> Things to do: </p>
+        <p> 1. Divulge a way to make a spinner appear at least somewhere on the page while an escher map is being loaded. Naturally, it is equally important to make sure it removes itself once the load is complete. </p>
+        <p> 2. Customize the style of the button and the tabs to be more visually appealing (CSS) </p>
+        <p> 3. Consider using a dropdown instead of tabs in an effort to save space. Zak said that the code should remain almost entirely the same minues some HTML. </p>
+        <p> 4. Look into the possibility of making it so that the page will intelligently arrange for the smallest map to be the defult. May not actually be necessary given the button. </p>
+        <p> 5. Implement the edge weights once Anne's code is confirmed to be compatible. Make it so that you can toggle between weighted and unweighted using the methods that Zak showed me. THey are still in the code and commented as well. The unweighted version should naturally be the default. </p>
+        <!-- <p>There are two pieces to a tabbed interface: the tabs themselves, and the content for each tab. The tabs are an element with the class <code>.tabs</code>, and each item has the class <code>.tabs-title</code>. Each tab contains a link to a tab. The <code>href</code> of each link should match the ID of a tab.</p>
+        <p>The tab content container has the class <code>.tabs-content</code>, while each section has the class <code>.tabs-panel</code>. Each content pane also has a unique ID, which is targeted by a link in the tabstrip.</p> -->
+        <p>This button controls the initial load of the first map.</p>
+        <button class=button onclick="Kami()">Click me</button>
+        <p>Put it all together, and we get this:</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns">
+        <ul class="tabs" data-tabs id="mapTabs">
+          <li class="tabs-title is-active"><a href="#panel1">Vitamin & Cofactor Metabolism</a></li>
+          <li class="tabs-title"><a href="#panel2">Carbohydrates Metabolism</a></li>
+          <li class="tabs-title"><a href="#panel3">Energy & Nucleotide Metabolism</a></li>
+          <li class="tabs-title"><a href="#panel4">Glycan Metabolism</a></li>
+          <li class="tabs-title"><a href="#panel5">Amino Acids Metabolism</a></li>
+        </ul>
+
+        <div class="tabs-content" data-tabs-content="mapTabs">
+          <div class="tabs-panel is-active" id="panel1">
+            <p> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. </p>
+            <!--  <p>One</p> -->
+            <div id="map_container" style="height: 540px; width: 900px; overflow: hidden"></div>
+            <!-- <div id="map_container" style="height: 540px; width: 900px; overflow: hidden"></div> -->
+          </div>
+          <div class="tabs-panel" id="panel2">
+            <p> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. </p>
+            <!-- <p>Two</p> -->
+            <div id="map_container1" style="height: 540px; width: 900px; overflow: hidden"></div>
+            <!-- <div id="map_container" style="height: 540px; width: 900px; overflow: hidden"></div> -->
+          </div>
+          <div class="tabs-panel" id="panel3">
+            <!-- <p>Three</p> -->
+            <div id="map_container2" style="height: 540px; width: 900px; overflow: hidden"></div>
+            <!-- <div id="map_container" style="height: 540px; width: 900px; overflow: hidden"></div> -->
+          </div>
+          <div class="tabs-panel" id="panel4">
+            <!-- <p>Four</p> -->
+            <div id="map_container3" style="height: 540px; width: 900px; overflow: hidden"></div>
+            <!-- <div id="map_container" style="height: 540px; width: 900px; overflow: hidden"></div> -->
+          </div>
+          <div class="tabs-panel" id="panel5">
+            <!-- <p>Five</p> -->
+            <div id="map_container4" style="height: 540px; width: 900px; overflow: hidden"></div>
+            <!-- <div id="map_container" style="height: 540px; width: 900px; overflow: hidden"></div> -->
+          </div>
+        </div>
+
+        <!-- <div id="map_container" style="height: 540px; width: 900px; overflow: hidden"></div> -->
+
+      </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
